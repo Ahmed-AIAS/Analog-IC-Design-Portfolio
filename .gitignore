@@ -1,0 +1,16 @@
+# Cadence / Spectre simulation outputs & netlists
+*.scs
+*.netlist
+*.ahdlSimDB
+*.run
+*.raw/
+*.vcd
+*.fsdb
+*.log
+*.prt
+*.cdsinfo.tag
+*~
+
+# Operating system metadata
+.DS_Store
+Thumbs.db
