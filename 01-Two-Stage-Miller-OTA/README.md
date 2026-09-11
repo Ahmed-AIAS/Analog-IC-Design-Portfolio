@@ -1,9 +1,9 @@
 # Project 01: Two-Stage CMOS Miller Operational Transconductance Amplifier (OTA)
 
 ## Executive Summary
-This project presents the systematic design, sizing, and characterization of an unbuffered two-stage Miller-compensated OTA driving a heavy capacitive load ($C_L = 5\text{ pF}$) under a 1.8 V supply rail[cite: 3, 9]. Designed via the $g_m/I_D$ methodology using the ADT Sizing Assistant, the amplifier satisfies strict static gain error ($\le 0.05\%$), CMRR ($\ge 74\text{ dB}$), slew rate ($\ge 5\text{ V}/\mu\text{s}$), and input common-mode range constraints[cite: 3, 9]. 
+This project presents the systematic design, sizing, and characterization of an unbuffered two-stage Miller-compensated OTA driving a heavy capacitive load ($C_L = 5\text{ pF}$) under a 1.8 V supply rail[cite: 3, 9]. Sized via the $g_m/I_D$ methodology using the ADT Sizing Assistant, the amplifier satisfies strict static gain error ($\le 0.05\%$), CMRR ($\ge 74\text{ dB}$), slew rate ($\ge 5\text{ V}/\mu\text{s}$), and input common-mode range constraints[cite: 3, 9]. 
 
-An advanced PVT-tracking lead compensation network based on the Johns & Martin methodology was implemented to replace the conventional fixed nulling resistor, maintaining closed-loop stability across an industrial temperature range ($-40^\circ\text{C}$ to $125^\circ\text{C}$).
+An advanced PVT-tracking lead compensation network based on the Johns & Martin methodology was implemented to replace the conventional fixed nulling resistor, maintaining closed-loop stability across an industrial temperature range ($-40^\circ\text{C}$ to $125^\circ\text{C}$)[cite: 3].
 
 ---
 
@@ -29,7 +29,7 @@ An advanced PVT-tracking lead compensation network based on the Johns & Martin m
 ### 1. Topology Selection & Gain Allocation
 * **PMOS Input Pair:** Selected to accommodate the strict CMIR-Low constraint ($V_{cm} \le 0.2\text{ V}$) down towards ground without cutting off the differential pair[cite: 3].
 * **Asymmetric Gain Budgeting ($A_{v1} \approx 2A_{v2}$):** The first stage was assigned $A_{v1} \approx 63.2\text{ V/V}$ ($g_m/I_D = 13\text{ V}^{-1}$) and the second stage $A_{v2} \approx 31.6\text{ V/V}$ ($g_m/I_D = 11\text{ V}^{-1}$)[cite: 3, 9]. Allocating higher gain to the input stage suppresses second-stage thermal noise and input-referred offset[cite: 3].
-* **Systematic Offset Cancellation:** To prevent output rail clamping, the $V_{GS}$ of the first-stage NMOS load ($L=560\text{ nm}$) was matched to the second-stage NMOS driver ($L=520\text{ nm}$) at $V_{GS} = 821.6\text{ mV}$, keeping open-loop output balanced at $951.6\text{ mV}$ ($V_{DD}/2$)[cite: 3].
+* **Systematic Offset Cancellation:** To prevent output rail clamping, the $V_{GS}$ of the first-stage NMOS load ($L=560\text{ nm}$) was matched to the second-stage NMOS driver ($L=520\text{ nm}$) at $V_{GS} = 821.6\text{ mV}$, keeping the open-loop output balanced at $951.6\text{ mV}$ ($V_{DD}/2$)[cite: 3].
 
 ### 2. Johns & Martin Tracking Lead Compensation
 Using a fixed nulling resistor ($R_z = 1/g_{m2} = 2.27\text{ k}\Omega$) places the RHP zero at infinity under nominal conditions, but temperature shifts cause $g_{m2}$ to drift, degrading phase margin[cite: 3]. 
@@ -41,4 +41,4 @@ Using a fixed nulling resistor ($R_z = 1/g_{m2} = 2.27\text{ k}\Omega$) places t
 ---
 
 ## Documentation
-* Full Technical Report: [Mini_Project_1_Report.pdf](./docs/Mini_Project_1_Report.pdf)[cite: 3]
+* [View Full Technical Report (PDF)](./Mini_Project_1_Report.pdf)[cite: 3]
